@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomness at its best</title>
+    <style>
+        .carousel-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px 0;
+            text-align: center;
+            scroll-behavior: smooth; 
+        }
+        .user-image {
+            display: inline-block;
+            margin: 0 10px;
+            width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Randomness at its best</h1>
+    <div class="carousel-container" id="carouselContainer"></div>
+
+    <script>
+        const imageData = [
+            { "image": "thomas-charters-qmHMSN7sDeI-unsplash.jpg" },
+            { "image": "takashi-miyazaki-VMwfhWcGYMg-unsplash.jpg" },
+            { "image": "takashi-miyazaki-SxWYDryH5MA-unsplash.jpg" },
+            { "image": "takashi-miyazaki-NZoujuxW13Y-unsplash.jpg" },
+            { "image": "takashi-miyazaki-ns6yetXrPUg-unsplash.jpg" },
+            { "image": "takashi-miyazaki-iPpJmIjypGg-unsplash.jpg" },
+            { "image": "takashi-miyazaki-DgAjHuN1HlA-unsplash.jpg" },
+            { "image": "takashi-miyazaki--Aqyms0g1WQ-unsplash.jpg" },
+            { "image": "scott-rodgerson-z0MDyylvY1k-unsplash.jpg" },
+            { "image": "robert-katzki-jbtfM0XBeRc-unsplash.jpg" },
+            { "image": "pawel-nolbert-4u2U8EO9OzY-unsplash.jpg" },
+            { "image": "pattern.jpeg" },
+            { "image": "naail-hussain-LV-FzX-l78c-unsplash.jpg" },
+            { "image": "mikita-yo-IO_CWfjXM7U-unsplash.jpg" },
+            { "image": "manu-franco-hszHumfW4wM-unsplash.jpg" },
+            { "image": "krystal-ng-PrQqQVPzmlw-unsplash.jpg" },
+            { "image": "julius-drost-pYAvBZvplOM-unsplash.jpg" },
+            { "image": "jr-korpa-moclBG0oPyQ-unsplash.jpg" },
+            { "image": "joshua-fuller-ta7rN3NcWyM-unsplash.jpg" },
+            { "image": "bruno-thethe-Evp4iNF3DHQ-unsplash.jpg" },
+            { "image": "ayana-wyse-t2bj6unVYoM-unsplash.jpg" },
+            { "image": "alexey-lin-j-0pjgxE1kc-unsplash.jpg" },
+            { "image": "alexander-grey-Xkuj7QuHj-I-unsplash.jpg" },
+                ];
+
+            
+        function loadImages(data) {
+            const container = document.getElementById('carouselContainer');
+            data.forEach(item => {
+                const img = new Image();
+                img.src = item.image;
+                img.classList.add('user-image');
+                container.appendChild(img);
+            });
+        }
+
+        // Loading time
+        const startTime = performance.now();
+
+        // Load images
+        loadImages(imageData);
+
+        // Loading time
+        const endTime = performance.now();
+        const loadingTime = endTime - startTime;
+        console.log("Images loaded in " + loadingTime + " milliseconds.");
+    </script>
+</body>
+</html>
+
+
